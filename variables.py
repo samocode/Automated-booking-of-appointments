@@ -2,18 +2,19 @@ import time
 from datetime import date
 import calendar
 
-user = "276p33396"
-passw = "Asdf4$lkjh"
+#login credentails for user account
+user = ""
+passw = ""
 
-time_slots = [9, 10]  # 4pm and 5:15pm
+time_slots = [9, 10]  # booking 2 specific time slots, 4pm and 5:15pm
 
-##gl_aut_user_login > div.c-login-block__wrapper > form > div.c-field.js-login-email-field > label > input
-# using css locator
+# using css locator 
 get_username = '//*[@id="gl_aut_user_login"]/div[2]/form/div[1]/label/input'
 
 # using css locator
 get_password = '//*[@id="gl_aut_user_login"]/div[2]/form/div[2]/label/input'
 
+# path to navigate to the weekly workout schedules
 weekday = '//*[@id="js-class-schedule-weekdays-container"]/li[4]'
 
 
@@ -21,7 +22,7 @@ def wait():
     time.sleep(2)
     return
 
-
+# function to return the specifc day of the week since time slots vary on weekends
 def get_week_day():
 
     todayDate = date.today()
@@ -40,7 +41,6 @@ def get_week_day():
         time_slots = [9, 10]
 
     return time_slots
-
 
 thisdict = {
     "0": "Sunday",
